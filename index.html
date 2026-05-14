@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="min-h-screen bg-slate-50 py-10 px-4">
+
+  <div class="max-w-lg mx-auto">
+
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="font-serif text-4xl text-slate-800 tracking-tight">To Do List</h1>
+      <p class="text-sm text-slate-400 mt-1">Stay on top of what matters</p>
+    </div>
+
+    <!-- Add Task Card -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-6 mb-5 shadow-sm">
+      <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Add new task</p>
+
+      <!-- Title -->
+      <div class="mb-4">
+        <label for="taskInput" class="block text-xs text-slate-500 mb-1.5">Task title</label>
+        <input
+          type="text" id="taskInput"
+          placeholder="e.g. Review project proposal"
+          class="w-full h-10 px-3 rounded-lg border border-slate-200 bg-slate-50 text-sm text-slate-800 placeholder-slate-300 transition"
+        >
+      </div>
+
+      <!-- Time -->
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        <div>
+          <label for="hours" class="block text-xs text-slate-500 mb-1.5">Hours (hh)</label>
+          <input type="text" id="hours" placeholder="24"
+            class="w-full h-10 px-3 rounded-lg border border-slate-200 bg-slate-50 text-sm text-slate-800 placeholder-slate-300 transition">
+        </div>
+        <div>
+          <label for="minutes" class="block text-xs text-slate-500 mb-1.5">Minutes (mm)</label>
+          <input type="text" id="minutes" placeholder="30"
+            class="w-full h-10 px-3 rounded-lg border border-slate-200 bg-slate-50 text-sm text-slate-800 placeholder-slate-300 transition">
+        </div>
+      </div>
+
+      <!-- Date -->
+      <div class="grid grid-cols-3 gap-3 mb-5">
+        <div>
+          <label for="dayInput" class="block text-xs text-slate-500 mb-1.5">Day</label>
+          <select id="days" class="w-full h-10 px-3 rounded-lg border border-slate-200 bg-slate-50 text-sm text-slate-800 placeholder-slate-300 transition">
+            <option value="">Select Day</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        </div>
+        <div>
+          <label for="monthInput" class="block text-xs text-slate-500 mb-1.5">Month</label>
+          <select id="months" class="w-full h-10 px-3 rounded-lg border border-slate-200 bg-slate-50 text-sm text-slate-800 placeholder-slate-300 transition">
+            <option value="">Select Month</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+          
+        </div>
+        <div>
+          <label for="yearInput" class="block text-xs text-slate-500 mb-1.5">Year</label>
+          <select id="years" class="w-full h-10 px-3 rounded-lg border border-slate-200 bg-slate-50 text-sm text-slate-800 placeholder-slate-300 transition">
+            <option value="">Select Year</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2024">2027</option>
+            <option value="2025">2028</option>
+            <option value="2026">2029</option>
+          </select>
+        </div>
+    
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-wrap gap-2">
+        <button id="addTaskButton"
+          class="flex items-center gap-1.5 h-9 px-4 rounded-lg bg-violet-600 hover:bg-violet-800 active:scale-95 text-white text-sm font-medium transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          Add task
+        </button>
+        <button id="clearTasksButton"
+          class="flex items-center gap-1.5 h-9 px-4 rounded-lg border border-red-200 text-red-600 hover:bg-red-50 active:scale-95 text-sm font-medium transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+          Clear all
+        </button>
+        <button id="notificationsButton"
+          class="flex items-center gap-1.5 h-9 px-4 rounded-lg border border-amber-300 text-amber-700 hover:bg-amber-50 active:scale-95 text-sm font-medium transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 00-9.33-5 6 6 0 00-2.67 5v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0a3 3 0 11-6 0"/></svg>
+          Notifications
+        </button>
+      </div>
+
+      <!-- Notification Banner -->
+      <div id="notifBanner" class="hidden mt-3 flex items-center gap-2 px-4 py-2.5 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 00-9.33-5 6 6 0 00-2.67 5v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0a3 3 0 11-6 0"/></svg>
+        Notifications enabled! You'll be reminded of upcoming tasks.
+      </div>
+    </div>
+
+    <!-- Task List Card -->
+    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+      <div class="flex items-center justify-between mb-4">
+        <p class="text-xs font-semibold uppercase tracking-widest text-slate-400">My tasks</p>
+        <span id="taskCount" class="text-xs text-slate-400">0 tasks</span>
+      </div>
+
+      <!-- Empty state -->
+      <div id="emptyState" class="flex flex-col items-center justify-center py-10 text-slate-300">
+        <svg class="w-10 h-10 mb-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        <p class="text-sm">No tasks yet — add one above</p>
+      </div>
+
+      <!-- Task list -->
+      <ul id="taskList" class="flex flex-col gap-2"></ul>
+    </div>
+
+  </div>
+
+  <!-- <script src="dataBase.js"></script> -->
+   <script src="idb.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
